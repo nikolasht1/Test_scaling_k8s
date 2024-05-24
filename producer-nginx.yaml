@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq-producer-nginx
+  namespace: dlf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq-producer-nginx
+  template:
+    metadata:
+      labels:
+        app: rabbitmq-producer-nginx
+    spec:
+      containers:
+      - name: rabbitmq-producer-nginx
+        image: nikolasht1/rabbitmq-producer-app
+        imagePullPolicy: Always
+        env:
+        - name: RABBITMQ_QUEUE_NAME
+          value: nginx-queue
+        - name: RABBITMQ_URI
+          value: amqps://admin:<password>@b-26460f4e-40a3-4db1-9492-19cfee5560ed.mq.us-east-1.amazonaws.com:5671
