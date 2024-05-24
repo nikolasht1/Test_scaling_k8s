@@ -25,7 +25,7 @@ spec:
         - name: RABBITMQ_QUEUE_NAME
           value: nginx-queue
         - name: RABBITMQ_URI
-          value: amqps://admin:<password>@b-26460f4e-40a3-4db1-9492-19cfee5560ed.mq.us-east-1.amazonaws.com:5671
+          value: amqps://admin:<password>@b-264600ed.mq.us-east-1.amazonaws.com:5671
 ---
 apiVersion: v1
 kind: Service
